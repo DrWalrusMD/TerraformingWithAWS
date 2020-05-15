@@ -1,0 +1,5 @@
+#!/bin/bash
+
+apt-get update
+apt-get -y install nginx
+echo "Cisco SPL" > /var/www/html/index.html
