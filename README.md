@@ -22,10 +22,9 @@ Please ensure the following are created or installed before continuing:
 
 - **Terraform**
   - Version 0.12 or above
-  - Run `terraform init` in the same folder Git is initialized in
 - **Git**
   - Set up credentials
-  - Run `git init` in the same folder Terraform is initialized in
+  - Run `git init` in the working folder
 - **AWS IAM User with AdministratorAccess policy***
 - **Generate a public and private key pair called "keypair"***
 
@@ -42,9 +41,10 @@ Linux/MacOS: https://docs.joyent.com/public-cloud/getting-started/ssh-keys/gener
 
 ## Instructions
 
-1. Run `git pull https://github.com/DrWalrusMD/TerraformingWithAWS.git` in the same folder Terraform and Git are initialized in
-2. Place the generated SSH keys "keypair" and "keypair.pub" in the same folder that `git pull` was ran
-3. Set Environment Variables with the Access and Secret Access keys for the AWS IAM User being used
+1. Run `git pull https://github.com/DrWalrusMD/TerraformingWithAWS.git` in the same folder Git is initialized in
+2. Run `terraform init` to initialize the folder for Terraform
+3. Place the generated SSH keys "keypair" and "keypair.pub" in the same folder that `git pull` was ran
+4. Set Environment Variables with the Access and Secret Access keys for the AWS IAM User being used
 
  Linx/MacOS:
   
@@ -57,5 +57,5 @@ Linux/MacOS: https://docs.joyent.com/public-cloud/getting-started/ssh-keys/gener
     set AWS_ACCESS_KEY_ID=
     set AWS_SECRET_ACCESS_KEY=
   
-4. Run `terraform apply -auto-approve`
-5. After the resources are provisioned, access the static website through the ELB's address.
+5. Run `terraform apply -auto-approve`
+6. After the resources are provisioned, access the static website through the ELB's address.
